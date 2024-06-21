@@ -14,13 +14,13 @@ public class EmailService {
 
 
 
-    public static String generateRandomString(int length) {
+    public String generateRandomString() {
         final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         final int LENGTH = 8;
         SecureRandom random = new SecureRandom();
-        StringBuilder sb = new StringBuilder(length);
+        StringBuilder sb = new StringBuilder(LENGTH);
 
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < LENGTH; i++) {
             int randomIndex = random.nextInt(CHARACTERS.length());
             sb.append(CHARACTERS.charAt(randomIndex));
         }
