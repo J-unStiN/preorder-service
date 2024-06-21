@@ -34,7 +34,7 @@ public class Member {
     @Column(unique = true, nullable = false, length = 13)
     private String phoneNumber;
 
-    @Column(nullable = false, length = 70)
+    @Column(nullable = true, length = 70)
     private String address;
 
     @CreationTimestamp
