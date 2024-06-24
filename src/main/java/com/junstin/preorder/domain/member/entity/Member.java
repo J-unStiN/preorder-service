@@ -1,5 +1,6 @@
 package com.junstin.preorder.domain.member.entity;
 
+import com.junstin.preorder.domain.member.dto.req.MemberSignUpReqDto;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -42,4 +43,15 @@ public class Member {
 
     @UpdateTimestamp
     private LocalDateTime updateTime;
+
+
+    public static Member create(MemberSignUpReqDto memberSignUpReqDto) {
+        return Member.builder()
+                .name(memberSignUpReqDto.name())
+                .email(memberSignUpReqDto.email())
+                .password(memberSignUpReqDto.password())
+                .phoneNumber(memberSignUpReqDto.phoneNumber())
+                .address(memberSignUpReqDto.address())
+                .build();
+    }
 }
